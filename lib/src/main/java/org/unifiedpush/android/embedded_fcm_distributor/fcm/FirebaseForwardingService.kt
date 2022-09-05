@@ -27,8 +27,7 @@ class FirebaseForwardingService : FirebaseMessagingService() {
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        Log.d(TAG, "New Firebase message ${remoteMessage.messageId}")
-        Log.d(TAG, "${remoteMessage.messageId} priority: ${remoteMessage.priority}, originalPriority: ${remoteMessage.originalPriority}")
+        Log.d(TAG, "New Firebase message ${remoteMessage.messageId}, priority: ${remoteMessage.priority}, originalPriority: ${remoteMessage.originalPriority}")
         if(remoteMessage.originalPriority > remoteMessage.priority){
             Log.d(TAG, "Firebase message deprioritized: ${remoteMessage.messageId}")
         }
